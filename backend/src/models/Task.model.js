@@ -1,0 +1,38 @@
+const mongoose = require("mongoose");
+
+const taskSchema = new mongoose.Schema(
+  {
+    title: { type: String, required: true },
+    description: String,
+    status: {
+      type: String,
+      enum: ["BACKLOG", "IN_PROGRESS", "REVIEW", "DONE"],
+      default: "BACKLOG",
+    },
+    assignee: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    projectId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Project",
+      required: true,
+    },
+    priority: {
+      type: String,
+      enum: ["LOW", "MEDIUM", "HIGH"],
+      default: "MEDIUM",
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
+taskSchema.index({ projectId: 1, status: 1 });
+taskSchema.index({ assignee: 1 });
+taskSchema.index({ createdAt: -1 });
+
+module.exports = mongoose.model("Task", taskSchema);
