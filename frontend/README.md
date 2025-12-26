@@ -23,12 +23,6 @@ src/
 │   ├── project/       # Project-related UI (Invite modal, Project cards)
 │   ├── task/          # Kanban board, Task cards, Task modal
 │   └── activity/      # Activity timeline UI
-
-# install modules
-npm i 
-
-#run 
-npm run dev
 │
 ├── context/           # Global state (AuthContext)
 ├── pages/             # Route-level pages (Login, Signup, Projects, ProjectDetail)
@@ -36,3 +30,13 @@ npm run dev
 ├── routes/            # Protected routes
 ├── styles/            # Global styles (Tailwind)
 └── App.jsx
+
+# install modules
+npm i 
+
+#run 
+npm run dev
+
+#test credentials
+email:- rahul@test.com
+pass:- 123456
