@@ -57,3 +57,9 @@ Business rules are enforced strictly at the backend level.
 
 Task status transitions are strictly enforced:
 
+# install modules
+npm i 
+
+#run 
+npm run dev
+
